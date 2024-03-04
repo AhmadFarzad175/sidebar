@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background-color: #aaa; */
+        }
+        h1 {
+            font-size: 150px;
+            text-align: center;
+        }
+        button {
+            width: 60px;
+            outline: 0;
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid ;
+            background-color: white;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            opacity:0.7;
+
+
+        }
+        button:hover {
+            opacity: 1;
+        }
+        button#decrese {
+            border-color: red;
+
+        }
+        button#reset {
+            border-color: rgb(250, 250, 4);
+
+        }
+        button#increse {
+            border-color: green;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="demo">0</h1>
+        <button id="decrese">-</button>
+        <button id="reset">Reset</button>
+        <button id="increse">+</button>
+    </div>
+
+    <script>
+        //       --- SELECTING ELEMENTS ---
+        let para = document.getElementById('demo');
+        const minus = document.getElementById('decrese');
+        const reset = document.getElementById('reset');
+        const plus = document.getElementById('increse');
+        var x = 0;
+        para.style.color = 'black'
+
+
+        //       --- ADDING EVENTS TO BUTTONS ---
+        minus.addEventListener('click',function() {
+            x = Number(para.innerHTML) - 1 ;
+            para.innerHTML = x ;
+            if ( x <= -1 )
+                para.style.color = 'red';
+            if ( x == 0 )
+                para.style.color = 'black';
+        })
+        reset.addEventListener('click',function() {
+            para.innerHTML = 0 ;
+            para.style.color = 'black';
+        })
+        plus.addEventListener('click',function() {
+            x = Number(para.innerHTML) + 1 ;
+            para.innerHTML = x ;
+            if ( x >= 1 )
+                para.style.color = 'green';
+            if ( x == 0 )
+                para.style.color = 'black';
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>
