@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        padding: 20px;
+      }
+      .btn {
+        width: 100%;
+        background-color: #ccc;
+        font-weight: bold;
+        border: none;
+        padding: 20px;
+        text-align: left;
+        font-size: 20px;
+        transition: all 0.5s;
+      }
+      .btn::after {
+        content: "\00276F";
+        float: right;
+        transform: rotate(90deg);
+        transition: all 0.5s;
+      }
+      .active,
+      .btn:hover {
+        background-color: #eee;
+      }
+      .active:after {
+        content: "\00276F";
+        transform: rotate(270deg);
+      }
+      .para {
+        line-height: 25px;
+        text-align: justify;
+        background-color: #eee;
+        padding: 0px 10px;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <button class="btn">What is HTML?</button>
+      <div class="para">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum quas nobis aut neque deserunt ab,
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+        </p>
+      </div>
+      <button class="btn">What is CSS?</button>
+      <div class="para">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum quas nobis aut neque deserunt ab,
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+        </p>
+      </div>
+      <button class="btn">What is JAVASCRIPT?</button>
+      <div class="para">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum dolorum quas nobis aut neque deserunt ab,
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+          impedit minus eius odio dolor natus ullam voluptate consequuntur rem molestiae vitae, facilis repudiandae.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      let button = document.querySelectorAll(".btn");
+      let paragraph = document.querySelectorAll(".para");
+      for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function () {
+          button[i].classList.toggle("active");
+          if (paragraph[i].style.height) {
+            paragraph[i].style.height = null;
+          } else {
+            paragraph[i].style.height = paragraph[i].scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
