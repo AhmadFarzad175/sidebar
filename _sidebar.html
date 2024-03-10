@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .sidebar {
+            background-color: #333;
+            width: 0;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            transition: all 0.5s;
+        }
+        h2{
+            text-align: center;
+            margin: 20px;
+            color: white;
+        }
+        .ctrl {
+            font-size: 25px;
+            margin: 20px;
+            background-color: transparent;
+            border: none;
+        }
+
+        .close::after {
+            content: '\002716';
+            transition: content 1s;
+        }
+        .open::after {
+            content: '\002630';
+        }
+        .show {
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <button class="ctrl open close"></button>
+    <div class="sidebar">
+        <h2>sidebar</h2>
+    </div>
+
+    <script>
+        let btn = document.querySelector('.ctrl');
+        let side = document.querySelector('.sidebar');
+        btn.addEventListener('click',function () {
+            side.classList.toggle('show');
+            btn.classList.toggle('open');
+
+        })
+    </script>
+</body>
+</html>
